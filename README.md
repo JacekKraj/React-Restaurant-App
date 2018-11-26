@@ -25,6 +25,8 @@ Local development server will be running at http://localhost:3000.
 ![](Restaurant/ScreenShots/mobile.PNG)
 ![](Restaurant/ScreenShots/mobile_summary.PNG)
 
+![](Restaurant/ScreenShots/mainSummary.png)
+
 
 ## Built With
 

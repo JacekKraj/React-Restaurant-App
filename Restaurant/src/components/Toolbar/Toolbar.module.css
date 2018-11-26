@@ -1,0 +1,69 @@
+.Toolbar {
+  width: 100%;
+  height: 50px;
+  background-color: green;
+  box-sizing: border-box;
+  display: none;
+}
+
+.Toolbar h1 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Kalam', cursive;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-shadow: -1px 0 2px #b21729, 0 1px 2px #b21729, 1px 0 2px #b21729,
+    0 -1px 2px #b21729;
+}
+
+.logo {
+  height: 37px;
+  width: 55px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  display: none;
+}
+
+@media (min-height: 565px) {
+  .Toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid red;
+  }
+}
+
+@media (min-height: 600px) {
+  .Toolbar {
+    height: 55px;
+  }
+  .Toolbar h1 {
+    font-size: 1.3em;
+  }
+
+  .logo {
+    height: 45px;
+    width: 60px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-height: 700px) {
+  .Toolbar {
+    height: 75px;
+  }
+  .Toolbar h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-height: 700px) and (min-width: 650px) {
+  .Toolbar h1 {
+    font-size: 2em;
+  }
+}

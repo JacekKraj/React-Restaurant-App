@@ -1,0 +1,135 @@
+.myButton {
+  box-shadow: 0px 10px 14px -7px #3e7327;
+  background-color: #77b55a;
+  border-radius: 4px;
+  border: 1px solid #498f27;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 19px;
+  font-weight: bold;
+  padding: 11px 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #5b8a3c;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7px;
+  transition: all 0.35s ease-in-out;
+  display: none;
+}
+
+.smallButton {
+  display: block;
+  font-size: 12px;
+  padding: 5px 7px;
+  margin-top: 0px;
+}
+
+.myButton:hover {
+  background-color: #72b352;
+  transform: scale(1.1) perspective(1px);
+}
+
+.myButton:disabled {
+  cursor: default;
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+.myButton:disabled:hover {
+  transform: none;
+}
+
+.bump {
+  transform: scale(1.1);
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+@media (min-height: 400px) {
+  .smallButton {
+    padding: 8px 7px;
+  }
+}
+
+@media (min-height: 500px) {
+  .smallButton {
+    padding: 12px 7px;
+  }
+}
+
+@media (min-height: 565px) {
+  .myButton {
+    display: block;
+  }
+  .smallButton {
+    display: none;
+  }
+}
+
+@media (min-height: 700px) {
+  .myButton {
+    margin-top: 12px;
+  }
+}
+
+@media (min-height: 800px) {
+  .myButton {
+    font-size: 25px;
+    border-radius: 6px;
+  }
+}
+
+@media (min-height: 1000px) {
+  .myButton {
+    font-size: 50px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+}
+
+@media (min-height: 1200px) {
+  .myButton {
+    font-size: 70px;
+    margin-top: 30px;
+    border-radius: 14px;
+  }
+}
+
+@media (min-width: 640px) {
+  .smallButton {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 550px) and (min-height: 565px) {
+  .myButton {
+    padding: 11px 35px;
+  }
+}
+
+@media (min-width: 675px) and (min-height: 565px) {
+  .myButton {
+    padding: 11px 40px;
+  }
+}
+
+@media (min-width: 825px) and (min-height: 565px) {
+  .myButton {
+    padding: 11px 45px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .myButton {
+    padding: 11px 55px;
+  }
+}
+
+@media (min-width: 1450px) {
+  .myButton {
+    padding: 11px 90px;
+  }
+}

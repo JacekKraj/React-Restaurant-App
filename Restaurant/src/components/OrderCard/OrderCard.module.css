@@ -1,0 +1,121 @@
+.OrderCard {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.totalPrice {
+  margin-top: 10px;
+  display: table;
+  border-radius: 4px;
+  border: 1px solid #498f27;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  box-shadow: 0px 10px 14px -7px #3e7327;
+  background-color: #93d872;
+  color: white;
+  opacity: 0.8;
+  clear: both;
+  display: none;
+}
+
+.disabler {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.Orders {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-around;
+}
+
+.Logo {
+  display: none;
+  height: 75%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left;
+  margin-left: 10px;
+}
+
+@media (min-height: 565px) {
+  .totalPrice {
+    display: table;
+  }
+
+  .OrderCard {
+    height: calc(100vh - 170px);
+  }
+
+  .Orders {
+    height: 75%;
+  }
+}
+
+@media (min-height: 600px) {
+  .OrderCard {
+    height: calc(100vh - 205px);
+  }
+}
+
+@media (min-height: 640px) {
+  .Orders {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-height: 700px) {
+  .OrderCard {
+    height: calc(100vh - 235px);
+  }
+}
+
+@media (min-height: 800px) {
+  .OrderCard {
+    height: calc(100vh - 255px);
+  }
+  .totalPrice {
+    font-size: 25px;
+  }
+}
+
+@media (min-height: 1000px) {
+  .OrderCard {
+    height: calc(100vh - 275px);
+  }
+  .totalPrice {
+    font-size: 30px;
+  }
+}
+
+@media (min-height: 1200px) {
+  .OrderCard {
+    height: calc(100vh - 295px);
+  }
+  .totalPrice {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 825px) {
+  .Orders {
+    width: 70%;
+  }
+  .Logo {
+    display: table;
+    width: 25%;
+  }
+}

@@ -1,0 +1,56 @@
+.totalPrice {
+  margin-top: 10px;
+  display: table;
+  border-radius: 4px;
+  border: 1px solid #498f27;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  box-shadow: 0px 10px 14px -7px #3e7327;
+  background-color: #93d872;
+  color: white;
+  opacity: 0.8;
+  clear: both;
+  display: none;
+}
+
+.smallElement {
+  display: block;
+  font-size: 14px;
+  max-width: 90%;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.disabler {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+@media (min-height: 565px) {
+  .totalPrice {
+    display: table;
+  }
+  .smallElement {
+    display: none;
+  }
+}
+
+@media (min-height: 800px) {
+  .totalPrice {
+    font-size: 25px;
+  }
+}
+
+@media (min-height: 1000px) {
+  .totalPrice {
+    font-size: 30px;
+  }
+}
+
+@media (min-height: 1200px) {
+  .totalPrice {
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,14 @@
+.Picture {
+  display: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 10%;
+  height: 80%;
+}
+
+@media (min-width: 900px) and (min-height: 565px) {
+  .Picture {
+    display: block;
+  }
+}

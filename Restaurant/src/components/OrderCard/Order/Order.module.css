@@ -1,0 +1,92 @@
+.Order {
+  width: 30%;
+  height: 30%;
+  border: 2px solid #cbcfd6;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-left: 2.5%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  box-shadow: 0px 10px 14px -7px #666666;
+}
+
+.counter {
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  font-size: 15px;
+  color: black;
+  font-family: 'Kalam', cursive;
+  font-weight: bold;
+}
+
+.productPrice {
+  position: absolute;
+  /* right: 5px;
+  top: 2px; */
+  right: 0px;
+  top: 0px;
+  font-size: 15px;
+  color: black;
+  font-family: 'Kalam', cursive;
+  font-weight: bold;
+}
+
+.Off {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.Off > * {
+  display: none;
+}
+
+@media (min-width: 550px) {
+  .counter {
+    font-size: 20px;
+    left: 20px;
+  }
+  .productPrice {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 675px) {
+  .counter {
+    left: 35px;
+  }
+}
+
+@media (min-width: 825px) {
+  .counter {
+    font-size: 22px;
+    left: 20px;
+  }
+  .productPrice {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .counter {
+    font-size: 25px;
+    left: 50px;
+  }
+  .productPrice {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1250px) {
+  .counter {
+    left: 65px;
+  }
+}
+
+@media (min-width: 1450px) {
+  .counter {
+    left: 80px;
+  }
+}

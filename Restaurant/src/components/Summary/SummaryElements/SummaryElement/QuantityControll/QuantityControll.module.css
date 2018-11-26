@@ -1,0 +1,43 @@
+.wraper {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controler {
+  width: 30px;
+  height: 25px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Sriracha', cursive;
+  font-weight: bold;
+}
+
+.button1,
+.button2 {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  z-index: 300;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+@media (min-width: 700px) and (min-height: 675px) {
+  .button1,
+  .button2 {
+    height: 30px;
+    width: 30px;
+  }
+  .controler {
+    height: 30px;
+    font-size: 20px;
+    margin: 0 10px;
+  }
+}

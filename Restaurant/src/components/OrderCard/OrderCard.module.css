@@ -1,6 +1,6 @@
 .OrderCard {
   width: 100%;
-  height: 100%;
+  height: 65%;
   background-color: #ffffff;
   box-sizing: border-box;
 }
@@ -30,15 +30,21 @@
 .Orders {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   float: left;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: space-around;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-bottom: 15px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Orders::after {
+  content: '';
+  flex: 0 0 10%;
+}
+
+.Orders::-webkit-scrollbar {
+  display: none;
 }
 
 .Logo {
@@ -58,10 +64,12 @@
 
   .OrderCard {
     height: calc(100vh - 170px);
+    display: block;
   }
 
   .Orders {
     height: 75%;
+    margin-bottom: 0px;
   }
 }
 
@@ -80,6 +88,18 @@
 @media (min-height: 700px) {
   .OrderCard {
     height: calc(100vh - 235px);
+  }
+  .Orders {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: space-around;
+  }
+
+  .Orders::after {
+    content: '';
+    flex: 0 0 0;
+    display: none;
   }
 }
 

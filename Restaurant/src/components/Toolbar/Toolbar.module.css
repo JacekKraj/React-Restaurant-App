@@ -17,16 +17,6 @@
     0 -1px 2px #b21729;
 }
 
-.logo {
-  height: 37px;
-  width: 55px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  display: none;
-}
 
 @media (min-height: 565px) {
   .Toolbar {
@@ -45,12 +35,6 @@
     font-size: 1.3em;
   }
 
-  .logo {
-    height: 45px;
-    width: 60px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
 }
 
 @media (min-height: 700px) {

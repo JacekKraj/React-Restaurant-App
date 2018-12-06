@@ -4,15 +4,9 @@ import cx from 'classnames';
 
 class SubmitButton extends Component {
   render() {
-    const classes = cx(
-      styles.myButton,
-      {
-        [styles.bump]: this.props.isSubmitButtonBumping
-      },
-      {
-        [styles.smallButton]: this.props.smallScreen
-      }
-    );
+    const classes = cx(styles.myButton, {
+      [styles.bump]: this.props.isSubmitButtonBumping
+    });
 
     return (
       <button

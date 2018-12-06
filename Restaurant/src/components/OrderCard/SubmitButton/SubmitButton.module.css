@@ -15,14 +15,7 @@
   margin-right: auto;
   margin-top: 7px;
   transition: all 0.35s ease-in-out;
-  display: none;
-}
-
-.smallButton {
   display: block;
-  font-size: 12px;
-  padding: 5px 7px;
-  margin-top: 0px;
 }
 
 .myButton:hover {
@@ -46,27 +39,6 @@
 .myButton:active {
   position: relative;
   top: 1px;
-}
-
-@media (min-height: 400px) {
-  .smallButton {
-    padding: 8px 7px;
-  }
-}
-
-@media (min-height: 500px) {
-  .smallButton {
-    padding: 12px 7px;
-  }
-}
-
-@media (min-height: 565px) {
-  .myButton {
-    display: block;
-  }
-  .smallButton {
-    display: none;
-  }
 }
 
 @media (min-height: 700px) {

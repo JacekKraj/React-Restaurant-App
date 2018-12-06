@@ -26,6 +26,11 @@ const summaryElements = props => {
     />
   ));
 
+  const keyValuePairs = { ingredients: {}, price: props.price };
+  selectedProducts.forEach(product => {
+    keyValuePairs.ingredients[product] = allProducts[product];
+  });
+
   return (
     <>
       <div className={styles.SummaryElements}>{elementsToRender}</div>
@@ -56,6 +61,7 @@ const summaryElements = props => {
         <button
           className={styles.orderButton}
           disabled={props.price === '0.00'}
+          onClick={() => props.placeOrder(keyValuePairs)}
         >
           ORDER NOW
         </button>

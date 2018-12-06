@@ -12,15 +12,7 @@
   color: white;
   opacity: 0.8;
   clear: both;
-  display: none;
-}
-
-.smallElement {
-  display: block;
-  font-size: 14px;
-  max-width: 90%;
-  text-align: center;
-  margin-top: 5px;
+  display: table;
 }
 
 .disabler {
@@ -29,12 +21,6 @@
 }
 
 @media (min-height: 565px) {
-  .totalPrice {
-    display: table;
-  }
-  .smallElement {
-    display: none;
-  }
 }
 
 @media (min-height: 800px) {

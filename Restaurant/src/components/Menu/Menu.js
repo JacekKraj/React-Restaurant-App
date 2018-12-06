@@ -7,8 +7,6 @@ import meal from '../../assets/menu/fries2.jpg';
 import sweet from '../../assets/menu/dunat2.jpg';
 import hat from '../../assets/menu/hat.png';
 import hatReversed from '../../assets/menu/hatReversed.png';
-import TotalPrice from '../OrderCard/TotalPrice/TotalPrice';
-import SubmitButton from '../OrderCard/SubmitButton/SubmitButton';
 
 const menu = props => (
   <div className={styles.Menu}>
@@ -32,13 +30,6 @@ const menu = props => (
       type={'drinks'}
     />
     <Picture bgImage={hat} />
-    <TotalPrice cost={props.cost} smallScreen={true} />
-    <SubmitButton
-      disableHandler={props.cost === 0}
-      SubmitOnClick={props.SubmitOnClick}
-      isSubmitButtonBumping={props.isSubmitButtonBumping}
-      smallScreen={true}
-    />
   </div>
 );
 

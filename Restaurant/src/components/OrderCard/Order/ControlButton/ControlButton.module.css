@@ -1,9 +1,8 @@
 .AddButton,
 .RemoveButton {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  /* background-color: #000000; */
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
@@ -25,14 +24,6 @@
 .RemoveButton {
   left: 0px;
   bottom: 0px;
-}
-
-@media (min-width: 550px) {
-  .AddButton,
-  .RemoveButton {
-    width: 45px;
-    height: 45px;
-  }
 }
 
 @media (min-width: 1100px) and (min-height: 650px) {

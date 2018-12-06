@@ -1,8 +1,7 @@
 .Menu {
-  width: 25%;
+  width: 30%;
   height: 100%;
   background-color: #ffffff;
-  /* border: 5px solid blue; */
   box-sizing: border-box;
   display: flex;
   justify-content: space-around;

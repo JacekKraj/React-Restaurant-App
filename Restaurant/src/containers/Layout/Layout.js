@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import styles from './Layout.module.css';
-import StartPage from '../../components/StartPage/StartPage';
+
 import OrderCard from '../../components/OrderCard/OrderCard';
 import Toolbar from '../../components/Toolbar/Toolbar';
 import Menu from '../../components/Menu/Menu';
@@ -74,7 +75,7 @@ class Layout extends Component {
       },
       isSubmitButtonBumping: false,
       searchedProducts: 'sweets',
-      showSummary: false,
+      // showSummary: false,
       priceDiscount: 0,
       discountCode: {
         BlackFriday20: 0.2,
@@ -83,24 +84,18 @@ class Layout extends Component {
       orderNumber: 0,
       showSpinner: false,
       done: false,
-      apiError: false,
-      startApplication: false
+      apiError: false
     };
     this.baseState = this.state;
   }
 
-  startApplication = () => {
-    this.setState({
-      startApplication: true
-    });
-  };
-
   showSummary = () => {
-    this.setState({ showSummary: true });
+    // this.setState({ showSummary: true });
+    this.props.history.push({ pathname: this.props.match.url + '/summary' });
   };
 
   hideSummary = () => {
-    this.setState({ showSummary: false });
+    this.props.history.push('/dishcard');
   };
 
   addProduct = orderedThing => {
@@ -205,6 +200,7 @@ class Layout extends Component {
                 const numberHolder = this.state.orderNumber;
                 this.setState(this.baseState);
                 this.setState({ orderNumber: numberHolder });
+                this.props.history.replace('/');
               }, 1500);
             }
           );
@@ -219,6 +215,7 @@ class Layout extends Component {
                 const numberHolder = this.state.orderNumber;
                 this.setState(this.baseState);
                 this.setState({ orderNumber: numberHolder });
+                this.props.history.replace('/');
               }, 2200);
             }
           );
@@ -227,12 +224,11 @@ class Layout extends Component {
   };
 
   render() {
-    let applicationWindow = <StartPage onClick={this.startApplication} />;
-
-    if (this.state.startApplication) {
-      applicationWindow = (
-        <div className={styles.container}>
-          {this.state.showSummary ? (
+    return (
+      <div className={styles.container}>
+        <Route
+          path={this.props.match.path + '/summary'}
+          render={() => (
             <Summary
               backdrop={this.hideSummary}
               meals={this.state.meals}
@@ -253,134 +249,53 @@ class Layout extends Component {
               done={this.state.done}
               apiError={this.state.apiError}
             />
-          ) : null}
-          <Toolbar />
-          <OrderedGoods.Provider
-            value={{
-              data: this.state[this.state.searchedProducts],
-              addProduct: this.addProduct,
-              removeProduct: this.removeProduct,
-              price: productsPrices
-            }}
-          >
-            <OrderCard
-              cost={this.state.prices.total}
-              productList={this.state[this.state.searchedProducts]}
-              isSubmitButtonBumping={this.state.isSubmitButtonBumping}
-              SubmitOnClick={this.showSummary}
-            />
-            <Menu
-              toggleProducts={this.toggleProducts}
-              isSubmitButtonBumping={this.state.isSubmitButtonBumping}
-              SubmitOnClick={this.showSummary}
-              cost={this.state.prices.total}
-            />
-          </OrderedGoods.Provider>
-        </div>
-      );
-    }
-
-    return (
-      // <div className={styles.container}>
-      //   {this.state.showSummary ? (
-      //     <Summary
-      //       backdrop={this.hideSummary}
-      //       meals={this.state.meals}
-      //       sweets={this.state.sweets}
-      //       drinks={this.state.drinks}
-      //       price={(
-      //         this.state.prices.total *
-      //         (1 - this.state.priceDiscount)
-      //       ).toFixed(2)}
-      //       prices={productsPrices}
-      //       add={this.addProduct}
-      //       remove={this.removeProduct}
-      //       discountHandler={this.discountHandler}
-      //       discountSize={this.state.priceDiscount}
-      //       removeDiscount={this.removeDiscountHandler}
-      //       placeOrder={this.placeOrder}
-      //       showSpinner={this.state.showSpinner}
-      //       done={this.state.done}
-      //       apiError={this.state.apiError}
-      //     />
-      //   ) : null}
-      //   <Toolbar />
-      //   <OrderedGoods.Provider
-      //     value={{
-      //       data: this.state[this.state.searchedProducts],
-      //       addProduct: this.addProduct,
-      //       removeProduct: this.removeProduct,
-      //       price: productsPrices
-      //     }}
-      //   >
-      //     <OrderCard
-      //       cost={this.state.prices.total}
-      //       productList={this.state[this.state.searchedProducts]}
-      //       isSubmitButtonBumping={this.state.isSubmitButtonBumping}
-      //       SubmitOnClick={this.showSummary}
-      //     />
-      //     <Menu
-      //       toggleProducts={this.toggleProducts}
-      //       isSubmitButtonBumping={this.state.isSubmitButtonBumping}
-      //       SubmitOnClick={this.showSummary}
-      //       cost={this.state.prices.total}
-      //     />
-      //   </OrderedGoods.Provider>
-      // </div>
-      // <StartPage onClick={this.startApplication} />
-
-      <>{applicationWindow}</>
-
-      // {
-      //   this.state.startApplication ? {
-      //     <div className={styles.container}>
-      //   {this.state.showSummary ? (
-      //     <Summary
-      //       backdrop={this.hideSummary}
-      //       meals={this.state.meals}
-      //       sweets={this.state.sweets}
-      //       drinks={this.state.drinks}
-      //       price={(
-      //         this.state.prices.total *
-      //         (1 - this.state.priceDiscount)
-      //       ).toFixed(2)}
-      //       prices={productsPrices}
-      //       add={this.addProduct}
-      //       remove={this.removeProduct}
-      //       discountHandler={this.discountHandler}
-      //       discountSize={this.state.priceDiscount}
-      //       removeDiscount={this.removeDiscountHandler}
-      //       placeOrder={this.placeOrder}
-      //       showSpinner={this.state.showSpinner}
-      //       done={this.state.done}
-      //       apiError={this.state.apiError}
-      //     />
-      //   ) : null}
-      //   <Toolbar />
-      //   <OrderedGoods.Provider
-      //     value={{
-      //       data: this.state[this.state.searchedProducts],
-      //       addProduct: this.addProduct,
-      //       removeProduct: this.removeProduct,
-      //       price: productsPrices
-      //     }}
-      //   >
-      //     <OrderCard
-      //       cost={this.state.prices.total}
-      //       productList={this.state[this.state.searchedProducts]}
-      //       isSubmitButtonBumping={this.state.isSubmitButtonBumping}
-      //       SubmitOnClick={this.showSummary}
-      //     />
-      //     <Menu
-      //       toggleProducts={this.toggleProducts}
-      //       isSubmitButtonBumping={this.state.isSubmitButtonBumping}
-      //       SubmitOnClick={this.showSummary}
-      //       cost={this.state.prices.total}
-      //     />
-      //   </OrderedGoods.Provider>
-      // </div>
-      //   } : <StartPage onClick={this.startApplication} />
-      // }
+          )}
+        />
+        {/* {this.state.showSummary ? (
+          <Summary
+            backdrop={this.hideSummary}
+            meals={this.state.meals}
+            sweets={this.state.sweets}
+            drinks={this.state.drinks}
+            price={(
+              this.state.prices.total *
+              (1 - this.state.priceDiscount)
+            ).toFixed(2)}
+            prices={productsPrices}
+            add={this.addProduct}
+            remove={this.removeProduct}
+            discountHandler={this.discountHandler}
+            discountSize={this.state.priceDiscount}
+            removeDiscount={this.removeDiscountHandler}
+            placeOrder={this.placeOrder}
+            showSpinner={this.state.showSpinner}
+            done={this.state.done}
+            apiError={this.state.apiError}
+          />
+        ) : null} */}
+        <Toolbar />
+        <OrderedGoods.Provider
+          value={{
+            data: this.state[this.state.searchedProducts],
+            addProduct: this.addProduct,
+            removeProduct: this.removeProduct,
+            price: productsPrices
+          }}
+        >
+          <OrderCard
+            cost={this.state.prices.total}
+            productList={this.state[this.state.searchedProducts]}
+            isSubmitButtonBumping={this.state.isSubmitButtonBumping}
+            SubmitOnClick={this.showSummary}
+          />
+          <Menu
+            toggleProducts={this.toggleProducts}
+            isSubmitButtonBumping={this.state.isSubmitButtonBumping}
+            SubmitOnClick={this.showSummary}
+            cost={this.state.prices.total}
+          />
+        </OrderedGoods.Provider>
+      </div>
     );
   }
 }
